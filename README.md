@@ -1,2 +1,23 @@
 # Cpp-Basic-To-Advanced
 Basic to Advanced C++ Programming
+
+1_integer_types_memory
+2_floating_types_memory
+3_char_family_types_memory
+4_arithmetic_operators
+5_bool_type_memory
+6_io_example
+7_loops
+8_decision_structures
+9_funcoes_basicas
+10_functions_parameters
+11_arrays_explained
+12_string_example
+13_arrays_in_functions
+14_struct_vs_class
+15_POO_Introduction
+16_POO_constructor_destructor
+17_POO_encapsulation_and_constructor
+18_POO_dynamic_bankaccount_explained
+19_pointers_example
+20_new_delete_allocation
