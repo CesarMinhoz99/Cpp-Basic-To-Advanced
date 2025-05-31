@@ -46,7 +46,7 @@ int main() {
 
 /*
 ---------------------------------------------
-✅ Safe array access example (commented code):
+Safe array access example (commented code):
 
 // Function to safely access an array element
 void safeAccess(int arr[], int size, int index) {
