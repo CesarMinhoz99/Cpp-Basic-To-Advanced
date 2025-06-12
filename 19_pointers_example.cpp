@@ -1,53 +1,53 @@
 #include <iostream>
 using namespace std;
 
-// Function that modifies value using pointer parameter
-void changeValue(int* n) {
-    *n = 100; // Change the value at the memory address pointed by n to 100
+// Função que modifica o valor usando ponteiro como parâmetro
+void alterarValor(int* n) {
+    *n = 100; // Acessa o valor no endereço apontado por n e altera para 100
 }
 
-// Copy value using return (no pointers or references)
-int copyValue(int source) {
-    return source;
+// Função que copia valor por retorno (sem ponteiros ou referências)
+int copiarValor(int origem) {
+    return origem; // Retorna uma cópia do valor recebido
 }
 
-// Copy value using pointers
-void copyValuePtr(int* source, int* destination) {
-    *destination = *source;
+// Função que copia valor usando ponteiros
+void copiarValorPtr(int* origem, int* destino) {
+    *destino = *origem; // Copia o valor do endereço origem para o endereço destino
 }
 
 int main() {
-    // 1. int n = 10;
-    int n = 10; // n is a normal integer variable storing value 10
-    cout << "Value of n: " << n << endl; // Output: 10
+    // 1. Variável normal do tipo int
+    int n = 10; 
+    cout << "Valor inicial de n: " << n << endl; // Imprime 10
 
-    // 2. int* ptr; (uninitialized pointer)
-    int* ptr; // ptr is a pointer to int, but it is NOT initialized
-    // *ptr = 20; // This would cause a runtime error! ptr points to invalid memory
+    // 2. Declaração de ponteiro (ainda não inicializado)
+    int* ptr; 
+    // *ptr = 20;  // Cuidado! Isso causaria erro porque ptr não aponta para endereço válido
 
-    // 3. Correct usage of pointer:
-    int x = 5;      // Normal integer variable
-    ptr = &x;       // ptr now points to x (stores the address of x)
-    cout << "Value of x before change: " << x << endl; // Output: 5
+    // 3. Uso correto do ponteiro
+    int x = 5;      // Variável normal
+    ptr = &x;       // ptr recebe o endereço de x
+    cout << "Valor de x antes da alteração via ponteiro: " << x << endl; // 5
 
-    *ptr = 20;      // Change the value of x via the pointer ptr
-    cout << "Value of x after change via pointer: " << x << endl; // Output: 20
+    *ptr = 20;      // Modifica o valor de x através do ponteiro
+    cout << "Valor de x depois da alteração via ponteiro: " << x << endl; // 20
 
-    // 4. Using pointer in a function to modify variable
-    changeValue(ptr); // Function call, will change x to 100
-    cout << "Value of x after changeValue function: " << x << endl; // Output: 100
+    // 4. Usando ponteiro em função para alterar variável
+    alterarValor(ptr);  // Passa endereço de x para função
+    cout << "Valor de x após a função alterarValor: " << x << endl; // 100
 
-    // 5. Using copyValue (return method)
+    // 5. Copiando valor usando retorno de função (sem ponteiros)
     int a = 10;
     int b = 0;
-    b = copyValue(a);
-    cout << "After copyValue (return): b = " << b << endl; // b = 10
+    b = copiarValor(a);
+    cout << "Valor de b após copiarValor (cópia por retorno): " << b << endl; // 10
 
-    // 6. Using copyValuePtr (pointer method)
+    // 6. Copiando valor usando ponteiros
     int m = 30;
     int n2 = 0;
-    copyValuePtr(&m, &n2);
-    cout << "After copyValuePtr (pointers): n2 = " << n2 << endl; // n2 = 30
+    copiarValorPtr(&m, &n2); // Passa endereço de m e n2 para copiar valor
+    cout << "Valor de n2 após copiarValorPtr (cópia por ponteiro): " << n2 << endl; // 30
 
     return 0;
 }
